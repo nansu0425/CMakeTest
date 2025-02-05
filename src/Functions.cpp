@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main(int argc, char* charv[]) {
+#include <CMakeTest/Functions.h>
+
+void PrintHello() {
 	std::cout << "Hello, World!" << std::endl;
-	return 0;
 }

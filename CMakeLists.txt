@@ -1,14 +1,22 @@
 ﻿cmake_minimum_required(VERSION 3.10)
 
-# set the project name
-project(CMakeTest)
+# Project name and a few useful settings
+project(
+	CMakeTest
+	VERSION 1.0
+	LANGUAGES CXX
+)
 
-# add the executable
-add_executable(CMakeTest main.cpp)
+# Let's ensure -std=c++xx instead of -std=g++xx
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-# add compiler interface library
-add_library(CompilerInterface INTERFACE)
-target_compile_features(CompilerInterface INTERFACE cxx_std_17)
+# Let's nicely support folders in IDE's
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-# link the executable to the compiler interface library
-target_link_libraries(CMakeTest PRIVATE CompilerInterface)
+# Add the interface library
+add_library(ILib INTERFACE)
+target_compile_features(ILib INTERFACE cxx_std_17)
+
+# add subdirectories
+add_subdirectory(src)
+add_subdirectory(apps)
