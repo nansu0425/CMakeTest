@@ -1,5 +1,8 @@
 ﻿cmake_minimum_required(VERSION 3.10)
 
+# Log the VCPKG_DIR
+message(STATUS "VCPKG_DIR is set to: $ENV{VCPKG_DIR}")
+
 # Project name and a few useful settings
 project(
 	CMakeTest
@@ -18,9 +21,6 @@ add_library(ILib INTERFACE)
 
 # Set the C++ standard to C++17
 target_compile_features(ILib INTERFACE cxx_std_17)
-
-# Log the VCPKG_INSTALLED_DIR
-message(STATUS "VCPKG_INSTALLED_DIR is set to: ${VCPKG_INSTALLED_DIR}")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	# Add the include directory for the vcpkg installed packages

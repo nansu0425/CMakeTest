@@ -9,7 +9,7 @@
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_DIR}/scripts/buildsystems/vcpkg.cmake"
       },
       "condition": {
         "type": "equals",
@@ -23,20 +23,18 @@
       }
     },
     {
-      "name": "linux-debug-base",
+      "name": "linux-debug",
       "description": "Target Linux with the Visual Studio development environment. (Debug)",
       "displayName": "Linux Debug",
-      "hidden": true,
       "inherits": "linux-base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {
-      "name": "linux-release-base",
+      "name": "linux-release",
       "description": "Target Linux with the Visual Studio development environment. (Release)",
       "displayName": "Linux Release",
-      "hidden": true,
       "inherits": "linux-base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
@@ -54,7 +52,7 @@
         "strategy": "external"
       },
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_DIR}/scripts/buildsystems/vcpkg.cmake"
       },
       "condition": {
         "type": "equals",
@@ -63,20 +61,18 @@
       }
     },
     {
-      "name": "windows-x64-debug-base",
+      "name": "windows-x64-debug",
       "description": "Target Windows x64 with the Visual Studio development environment. (Debug)",
       "displayName": "Windows x64 Debug",
-      "hidden": true,
       "inherits": "windows-x64-base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {
-      "name": "windows-x64-release-base",
+      "name": "windows-x64-release",
       "description": "Target Windows x64 with the Visual Studio development environment. (Release)",
       "displayName": "Windows x64 Release",
-      "hidden": true,
       "inherits": "windows-x64-base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
