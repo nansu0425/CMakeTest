@@ -25,6 +25,9 @@ message(STATUS "VCPKG_INSTALLED_DIR is set to: ${VCPKG_INSTALLED_DIR}")
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	# Add the include directory for the vcpkg installed packages
 	target_include_directories(ILib INTERFACE ${VCPKG_INSTALLED_DIR}/x64-windows/include)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+	# Add the include directory for the vcpkg installed packages
+	target_include_directories(ILib INTERFACE ${VCPKG_INSTALLED_DIR}/x64-linux/include)
 else()
 	message(STATUS "Unknown OS: ${CMAKE_SYSTEM_NAME}")
 endif()
