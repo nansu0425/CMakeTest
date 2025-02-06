@@ -55,7 +55,8 @@
       "installDir": "${sourceDir}/out/install/${presetName}",
       "cacheVariables": {
         "CMAKE_C_COMPILER": "cl.exe",
-        "CMAKE_CXX_COMPILER": "cl.exe"
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
       },
       "condition": {
         "type": "equals",
@@ -64,40 +65,52 @@
       }
     },
     {
-      "name": "x64-debug",
-      "displayName": "x64 Debug",
+      "name": "x64-debug-base",
       "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
+      "displayName": "x64 Debug",
+      "hidden": true,
       "inherits": "windows-base",
       "architecture": {
         "value": "x64",
         "strategy": "external"
       },
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
     },
     {
-      "name": "x64-release",
+      "name": "x64-release-base",
+      "description": "Target Windows (64-bit) with the Visual Studio development environment. (Release)",
+      "hidden": true,
       "displayName": "x64 Release",
-      "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
-      "inherits": "x64-debug",
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+      "inherits": "x64-debug-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
     },
     {
-      "name": "x86-debug",
-      "displayName": "x86 Debug",
+      "name": "x86-debug-base",
       "description": "Target Windows (32-bit) with the Visual Studio development environment. (Debug)",
+      "displayName": "x86 Debug",
+      "hidden": true,
       "inherits": "windows-base",
       "architecture": {
         "value": "x86",
         "strategy": "external"
       },
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
     },
     {
-      "name": "x86-release",
+      "name": "x86-release-base",
+      "description": "Target Windows (32-bit) with the Visual Studio development environment. (Release)",
       "displayName": "x86 Release",
-      "description": "Target Windows (32-bit) with the Visual Studio development environment. (RelWithDebInfo)",
-      "inherits": "x86-debug",
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+      "hidden": true,
+      "inherits": "x86-debug-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
     }
   ]
 }
