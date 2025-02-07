@@ -1,3 +1,6 @@
-#pragma once
+#ifndef CMAKETEST_FUNCTIONS_H
+#define CMAKETEST_FUNCTIONS_H
 
 void PrintHello();
+
+#endif // !CMAKETEST_FUNCTIONS_H
