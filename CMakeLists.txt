@@ -1,8 +1,8 @@
 ﻿cmake_minimum_required(VERSION 3.10)
 
-# VCPKG_DIR environment variable must be set
-if(NOT DEFINED ENV{VCPKG_DIR})
-    message(FATAL_ERROR "Error: VCPKG_DIR environment variable is not set. Please set it before running CMake.")
+# VCPKG_ROOT environment variable must be set
+if(NOT DEFINED ENV{VCPKG_ROOT})
+    message(FATAL_ERROR "Error: VCPKG_ROOT environment variable is not set. Please set it before running CMake.")
 endif()
 
 # Project name and a few useful settings
@@ -22,7 +22,7 @@ message(STATUS "VCPKG_INCLUDE_DIR is set to: ${VCPKG_INCLUDE_DIR}")
 
 find_path(ASIO_INCLUDE_DIR NAMES asio.hpp PATHS ${VCPKG_INCLUDE_DIR})
 
-# ASIO headers must be found
+# Asio headers must be found
 if(NOT ASIO_INCLUDE_DIR)
     message(FATAL_ERROR "Error: Asio headers not found. Make sure asio is installed via vcpkg.")
 endif()
