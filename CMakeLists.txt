@@ -5,6 +5,14 @@ if(NOT DEFINED ENV{VCPKG_DIR})
     message(FATAL_ERROR "Error: VCPKG_DIR environment variable is not set. Please set it before running CMake.")
 endif()
 
+# Project name and a few useful settings
+project(
+	CMakeTest
+	VERSION 1.0
+	LANGUAGES CXX
+)
+
+message(STATUS "CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 message(STATUS "VCPKG_INSTALLED_DIR is set to: ${VCPKG_INSTALLED_DIR}")
 message(STATUS "VCPKG_TARGET_TRIPLET is set to: ${VCPKG_TARGET_TRIPLET}")
 
@@ -20,13 +28,6 @@ if(NOT ASIO_INCLUDE_DIR)
 endif()
 
 message(STATUS "ASIO_INCLUDE_DIR is set to: ${ASIO_INCLUDE_DIR}")
-
-# Project name and a few useful settings
-project(
-	CMakeTest
-	VERSION 1.0
-	LANGUAGES CXX
-)
 
 # Let's ensure -std=c++xx instead of -std=g++xx
 set(CMAKE_CXX_EXTENSIONS OFF)

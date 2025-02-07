@@ -32,6 +32,15 @@
       }
     },
     {
+      "name": "linux-debug-release",
+      "description": "Target Linux with the Visual Studio development environment. (Debug Release)",
+      "displayName": "Linux Debug Release",
+      "inherits": "linux-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
       "name": "linux-release",
       "description": "Target Linux with the Visual Studio development environment. (Release)",
       "displayName": "Linux Release",
@@ -67,6 +76,15 @@
       "inherits": "windows-x64-base",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-x64-debug-release",
+      "description": "Target Windows x64 with the Visual Studio development environment. (Debug Release)",
+      "displayName": "Windows x64 Debug Release",
+      "inherits": "windows-x64-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       }
     },
     {
