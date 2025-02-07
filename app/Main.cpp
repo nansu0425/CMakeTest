@@ -1,6 +1,6 @@
 #include <asio.hpp>
 
-#include <CMakeTest/Functions.h>
+#include "Functions.h"
 
 int main(int argc, char* charv[]) {
 	asio::io_context ioContext;

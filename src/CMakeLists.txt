@@ -4,5 +4,5 @@ add_library(Lib STATIC Functions.cpp)
 # Link the interface library
 target_link_libraries(Lib PUBLIC ILib)
 
-# Add the include directory
-target_include_directories(Lib PUBLIC ${CMAKE_SOURCE_DIR}/include)
+# Include the current directory
+target_include_directories(Lib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
