@@ -6,8 +6,8 @@ Visual Studio 2022에서 크로스플랫폼 C++ 앱을 빌드하고 디버깅할
 
 아래 링크를 참고하여 프로젝트에 필요한 도구 설치와 설정을 진행하세요.
 
-- [CMake projects in Visual Studio](https://learn.microsoft.com/ko-kr/cpp/build/cmake-projects-in-visual-studio?view=msvc-170)
-- [Tutorial: Create C++ cross-platform projects in Visual Studio](https://learn.microsoft.com/ko-kr/cpp/build/get-started-linux-cmake?view=msvc-170)
+- [Visual Studio의 CMake 프로젝트](https://learn.microsoft.com/ko-kr/cpp/build/cmake-projects-in-visual-studio?view=msvc-170)
+- [자습서: Visual Studio에서 C++ 플랫폼 간 프로젝트 만들기](https://learn.microsoft.com/ko-kr/cpp/build/get-started-linux-cmake?view=msvc-170)
 
 # Demo
 
